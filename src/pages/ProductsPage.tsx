@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query"
 import api from "../services/api"
 import type { Product } from "../types/productType"
 import { Skeleton } from "primereact/skeleton"
+import StarPic from "../assets/star.png"
 
 function ProductsPage() {
     const [searchKey, setSearchKey] = useState('')
@@ -136,7 +137,7 @@ function ProductsPage() {
                                                             </div>
                                                             <div className="flex gap-1 w-fit items-center">
                                                                 <div>
-                                                                    <img src="/src/assets/star.png" className="w-3" />
+                                                                    <img src={StarPic} className="w-3" />
                                                                 </div>
                                                                 <p className="text-sm max-[32rem]:text-[12px]">{product.rating.rate} | {product.rating.count} reviews</p>
                                                             </div>

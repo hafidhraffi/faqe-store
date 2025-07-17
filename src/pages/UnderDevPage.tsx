@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router"
 import Button from "../components/Button"
+import DevPic from "../assets/development.jpg"
 
 function UnderDevPage() {
     const navigate = useNavigate()
@@ -11,7 +12,7 @@ function UnderDevPage() {
                     <div className="w-full h-screen flex flex-col gap-3 text-[#1b3434] text-xl items-center justify-center tracking-wide">
                         <p className="text-[#0ead88] text-3xl">Sorry!</p>
                         <p className="max-sm:text-sm max-md:text-base max-lg:text-lg text-xl text-center">This page is under development ⚙️.</p>
-                        <img src="/src/assets/development.jpg" className="w-[500px]" />
+                        <img src={DevPic} className="w-[500px]" />
                         <Button
                             label={"Back"}
                             onClick={() => navigate(-1)}

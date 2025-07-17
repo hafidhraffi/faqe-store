@@ -1,26 +1,33 @@
+import ProductPic from "../assets/product.png";
+import CashPic from "../assets/cash.png";
+import ChatPic from "../assets/chat.png";
+import RefundPic from "../assets/refund.png";
+import GadgetsPic from "../assets/gadgets.png";
+import CommunityPic from "../assets/community.png";
+
 export const advantageData = [
   {
-    img_path: "/src/assets/product.png",
+    img: ProductPic,
     text: "From fashion and electronics to home essentials, everything you need in one place.",
   },
   {
-    img_path: "/src/assets/cash.png",
+    img: CashPic,
     text: "Enjoy competitive prices and exclusive deals without compromising on quality.",
   },
   {
-    img_path: "/src/assets/chat.png",
+    img: ChatPic,
     text: "Need help? Our friendly support team is ready to assist you, anytime.",
   },
   {
-    img_path: "/src/assets/refund.png",
+    img: RefundPic,
     text: "Hassle-free return policies to make sure you shop with confidence.",
   },
   {
-    img_path: "/src/assets/gadgets.png",
+    img: GadgetsPic,
     text: "Fully optimized for all devices, shop anywhere, anytime.",
   },
   {
-    img_path: "/src/assets/community.png",
+    img: CommunityPic,
     text: "A growing community of happy customers who keep coming back.",
   },
 ];

@@ -1,5 +1,7 @@
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
+import AboutPic from "../assets/about_pic.jpg"
+import WaPic from "../assets/wa_pic.png"
 
 function AboutPage() {
 
@@ -19,12 +21,12 @@ function AboutPage() {
                             </p>
                         </div>
                         <div className="flex max-md:flex-col lg:flex-col items-center">
-                            <img src="/src/assets/about_pic.jpg" className="max-lg:max-w-[300px] w-[400px]" />
+                            <img src={AboutPic} className="max-lg:max-w-[300px] w-[400px]" />
                             <div className="flex flex-col gap-5 min-w-[300px] bg-[#0ead88] p-5 rounded-[15px] text-white">
                                 <p>Something on your mind? Ask us anything about Faqe Store, we're just a message away!</p>
                                 <div className="flex justify-end">
                                     <a href="https://wa.me/6285158784211" target="_blank" className="active:scale-95 transition-all">
-                                        <img src="/src/assets/wa_pic.png" className="max-sm:h-10 max-md:h-12 h-14" />
+                                        <img src={WaPic} className="max-sm:h-10 max-md:h-12 h-14" />
                                     </a>
                                 </div>
                             </div>

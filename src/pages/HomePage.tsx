@@ -6,6 +6,14 @@ import { ChevronLeftIcon } from '@heroicons/react/24/solid'
 import { advantageData, testimonialData } from "../services/homePageData";
 import { useNavigate } from "react-router";
 import Button from "../components/Button";
+import HeroPic from "../assets/hero_pic.jpg"
+import ShirtPic from "../assets/shirt.png"
+import CoatPic from "../assets/coat.png"
+import JeansPic from "../assets/jeans.png"
+import BackpackPic from "../assets/backpack.png"
+import RingPic from "../assets/ring.png"
+import LaptopPic from "../assets/laptop.png"
+import QuotePic from "../assets/quote.png"
 
 function HomePage() {
     const navigate = useNavigate()
@@ -26,7 +34,7 @@ function HomePage() {
             <div className="w-full flex justify-center">
                 <div className="px-5 sm:px-20 w-[1280px]">
                     <div className="flex max-lg:flex-col max-md:mt-16 max-lg:my-20 max-lg:mb-32 my-40 justify-between items-center lg:gap-20">
-                        <div><img src="/src/assets/hero_pic.jpg" className="max-w-[450px] max-sm:max-w-[250px] max-md:max-w-[300px]" /></div>
+                        <div><img src={HeroPic} className="max-w-[450px] max-sm:max-w-[250px] max-md:max-w-[300px]" /></div>
                         <div className="gap-3 flex flex-col">
                             <div>
                                 <div className="max-sm:text-2xl max-md:text-3xl max-lg:text-4xl text-5xl text-[#1b3434]">Your Everyday Style</div>
@@ -40,22 +48,22 @@ function HomePage() {
                     </div>
                     <div className="flex justify-evenly">
                         <div className="max-md:h-[100px] h-[160px] flex justify-center">
-                            <img src="/src/assets/shirt.png" className="max-md:h-[50px] h-[80px] rotate-12" />
+                            <img src={ShirtPic} className="max-md:h-[50px] h-[80px] rotate-12" />
                         </div>
                         <div className="max-md:h-[100px] h-[160px] flex justify-center items-end">
-                            <img src="/src/assets/coat.png" className="max-md:h-[50px] h-[80px] rotate-45" />
+                            <img src={CoatPic} className="max-md:h-[50px] h-[80px] rotate-45" />
                         </div>
                         <div className="max-md:h-[100px] h-[160px] flex justify-center">
-                            <img src="/src/assets/jeans.png" className="max-md:h-[50px] h-[80px] rotate-90" />
+                            <img src={JeansPic} className="max-md:h-[50px] h-[80px] rotate-90" />
                         </div>
                         <div className="max-md:h-[100px] h-[160px] flex justify-center items-end">
-                            <img src="/src/assets/backpack.png" className="max-md:h-[50px] h-[80px] -rotate-12" />
+                            <img src={BackpackPic} className="max-md:h-[50px] h-[80px] -rotate-12" />
                         </div>
                         <div className="max-md:h-[100px] h-[160px] flex justify-center">
-                            <img src="/src/assets/ring.png" className="max-md:h-[50px] h-[80px] -rotate-90" />
+                            <img src={RingPic} className="max-md:h-[50px] h-[80px] -rotate-90" />
                         </div>
                         <div className="max-md:h-[100px] h-[160px] flex justify-center items-end">
-                            <img src="/src/assets/laptop.png" className="max-md:h-[50px] h-[80px]" />
+                            <img src={LaptopPic} className="max-md:h-[50px] h-[80px]" />
                         </div>
                     </div>
                     <p className="max-sm:text-sm max-md:text-base max-lg:text-lg text-xl text-[#1b3434] text-justify max-md:mt-10 mt-20 max-sm:leading-7 max-md:leading-8 max-lg:leading-9 leading-10 tracking-wide">
@@ -69,7 +77,7 @@ function HomePage() {
                                     return (
                                         <div key={index} className="flex items-center gap-5">
                                             <div className="bg-white max-md:h-[50px] max-md:w-[50px] h-[70px] w-[70px] flex items-center justify-center rounded-full shrink-0 max-md:p-3 p-5">
-                                                <img src={data.img_path} />
+                                                <img src={data.img} />
                                             </div>
                                             <p className="w-[400px]">{data.text}</p>
                                         </div>
@@ -88,7 +96,7 @@ function HomePage() {
                                     testimonialData.map((data, index) => {
                                         return (
                                             <div key={index} className="bg-white w-[350px] h-[200px] shrink-0 mr-10 border-2 border-[#0ead88] shadow-gray-500 shadow-xl rounded-[15px] flex flex-col items-center justify-between px-10 py-5">
-                                                <img src="/src/assets/quote.png" className="h-5" />
+                                                <img src={QuotePic} className="h-5" />
                                                 <p className="leading-5 tracking-wide">{data.text}</p>
                                                 <p>{data.author}</p>
                                             </div>
