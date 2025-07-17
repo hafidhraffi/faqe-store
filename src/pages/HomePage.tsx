@@ -1,8 +1,7 @@
 import { useRef } from "react";
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
-import { ChevronRightIcon } from '@heroicons/react/24/solid'
-import { ChevronLeftIcon } from '@heroicons/react/24/solid'
+import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid'
 import { advantageData, testimonialData } from "../services/homePageData";
 import { useNavigate } from "react-router";
 import Button from "../components/Button";

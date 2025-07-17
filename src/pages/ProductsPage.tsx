@@ -2,8 +2,7 @@ import { InputText } from "primereact/inputtext"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import { useEffect, useState } from "react"
-import { XMarkIcon } from '@heroicons/react/24/solid'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/solid'
+import { XMarkIcon, ExclamationTriangleIcon, NoSymbolIcon } from '@heroicons/react/24/solid'
 import { useQuery } from "@tanstack/react-query"
 import api from "../services/api"
 import type { Product } from "../types/productType"
@@ -103,51 +102,63 @@ function ProductsPage() {
                                 <p className="text-[#1b3434] text-base">Unable to load data</p>
                             </div>
                             :
-                            <div className="grid max-[950px]:grid-cols-3 max-md:grid-cols-2 grid-cols-4 gap-x-5 gap-y-10 mb-[150px] max-sm:mb-[100px] max-lg:mb-[120px]">
+                            <>
                                 {
-                                    isLoading ?
-                                        Array(4).fill(0).map((_, index) => (
-                                            <div key={index} className="flex justify-center">
-                                                <div className="h-[300px] w-[225px] max-lg:h-[250px] max-lg:w-[188px] max-[32rem]:h-[230px] max-[32rem]:w-[172px] bg-gray-100 text-[#1b3434] grid-rows-2 rounded-[15px] overflow-hidden border border-[#0ead88] shadow-gray-500 shadow-xl">
-                                                    <div className="h-1/2 bg-white flex w-full justify-center p-1">
-                                                        <Skeleton height="full" />
-                                                    </div>
-                                                    <div className="flex flex-col justify-between h-1/2 p-2">
-                                                        <div className="flex flex-col gap-1">
-                                                            <div className="text-sm max-[32rem]:text-[12px] line-clamp-2"><Skeleton /></div>
-                                                            <div className="text-lg max-[32rem]:text-base font-bold"><Skeleton width="80px" /></div>
-                                                        </div>
-                                                        <Skeleton width="100px" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))
-                                        :
-                                        filteredData?.map((product: Product, index: number) => {
-                                            return (
+                                    !isError && !isLoading && filteredData.length == 0 &&
+                                    <div className="flex flex-col items-center">
+                                        <div className="w-1/12 min-w-20 flex">
+                                            <NoSymbolIcon className="text-[#0ead88]" />
+                                        </div>
+                                        <p className="text-[#0ead88] font-bold text-2xl">Sorry! No items match your search.</p>
+                                    </div>
+                                }
+                                <div className="grid max-[950px]:grid-cols-3 max-md:grid-cols-2 grid-cols-4 gap-x-5 gap-y-10 mb-[150px] max-sm:mb-[100px] max-lg:mb-[120px]">
+                                    {
+                                        isLoading ?
+                                            Array(4).fill(0).map((_, index) => (
                                                 <div key={index} className="flex justify-center">
                                                     <div className="h-[300px] w-[225px] max-lg:h-[250px] max-lg:w-[188px] max-[32rem]:h-[230px] max-[32rem]:w-[172px] bg-gray-100 text-[#1b3434] grid-rows-2 rounded-[15px] overflow-hidden border border-[#0ead88] shadow-gray-500 shadow-xl">
                                                         <div className="h-1/2 bg-white flex w-full justify-center p-1">
-                                                            <img src={product.image} />
+                                                            <Skeleton height="full" />
                                                         </div>
                                                         <div className="flex flex-col justify-between h-1/2 p-2">
                                                             <div className="flex flex-col gap-1">
-                                                                <p className="text-sm max-[32rem]:text-[12px] line-clamp-2">{product.title}</p>
-                                                                <p className="text-lg max-[32rem]:text-base font-bold">$ {product.price}</p>
+                                                                <div className="text-sm max-[32rem]:text-[12px] line-clamp-2"><Skeleton /></div>
+                                                                <div className="text-lg max-[32rem]:text-base font-bold"><Skeleton width="80px" /></div>
                                                             </div>
-                                                            <div className="flex gap-1 w-fit items-center">
-                                                                <div>
-                                                                    <img src={StarPic} className="w-3" />
-                                                                </div>
-                                                                <p className="text-sm max-[32rem]:text-[12px]">{product.rating.rate} | {product.rating.count} reviews</p>
-                                                            </div>
+                                                            <Skeleton width="100px" />
                                                         </div>
                                                     </div>
                                                 </div>
-                                            )
-                                        })
-                                }
-                            </div>
+                                            ))
+                                            :
+                                            filteredData?.map((product: Product, index: number) => {
+                                                return (
+                                                    <div key={index} className="flex justify-center">
+                                                        <div className="h-[300px] w-[225px] max-lg:h-[250px] max-lg:w-[188px] max-[32rem]:h-[230px] max-[32rem]:w-[172px] bg-gray-100 text-[#1b3434] grid-rows-2 rounded-[15px] overflow-hidden border border-[#0ead88] shadow-gray-500 shadow-xl">
+                                                            <div className="h-1/2 bg-white flex w-full justify-center p-1">
+                                                                <img src={product.image} />
+                                                            </div>
+                                                            <div className="flex flex-col justify-between h-1/2 p-2">
+                                                                <div className="flex flex-col gap-1">
+                                                                    <p className="text-sm max-[32rem]:text-[12px] line-clamp-2">{product.title}</p>
+                                                                    <p className="text-lg max-[32rem]:text-base font-bold">$ {product.price}</p>
+                                                                </div>
+                                                                <div className="flex gap-1 w-fit items-center">
+                                                                    <div>
+                                                                        <img src={StarPic} className="w-3" />
+                                                                    </div>
+                                                                    <p className="text-sm max-[32rem]:text-[12px]">{product.rating.rate} | {product.rating.count} reviews</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                    }
+                                </div>
+                            </>
+
                     }
                 </div>
             </div>
