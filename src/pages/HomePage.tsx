@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid'
 import { advantageData, testimonialData } from "../services/homePageData";
 import { useNavigate } from "react-router";
@@ -29,7 +27,6 @@ function HomePage() {
 
     return (
         <>
-            <Navbar />
             <div className="w-full flex justify-center">
                 <div className="px-5 sm:px-20 w-[1280px]">
                     <div className="flex max-lg:flex-col max-md:mt-16 max-lg:my-20 max-lg:mb-32 my-40 justify-between items-center lg:gap-20">
@@ -108,7 +105,6 @@ function HomePage() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

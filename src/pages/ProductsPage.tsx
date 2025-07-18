@@ -1,6 +1,4 @@
 import { InputText } from "primereact/inputtext"
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
 import { useEffect, useState } from "react"
 import { XMarkIcon, ExclamationTriangleIcon, NoSymbolIcon } from '@heroicons/react/24/solid'
 import { useQuery } from "@tanstack/react-query"
@@ -49,7 +47,6 @@ function ProductsPage() {
 
     return (
         <>
-            <Navbar />
             <div className="w-full flex justify-center">
                 <div className="px-5 sm:px-20 w-[1280px]">
                     <div className="mt-[150px] max-sm:mt-[100px] max-lg:mt-[120px] mb-[50px] flex flex-col gap-5">
@@ -162,7 +159,6 @@ function ProductsPage() {
                     }
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

@@ -1,5 +1,3 @@
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
 import AboutPic from "../assets/about_pic.jpg"
 import WaPic from "../assets/wa_pic.png"
 
@@ -7,7 +5,6 @@ function AboutPage() {
 
     return (
         <>
-            <Navbar />
             <div className="w-full flex justify-center">
                 <div className="px-5 sm:px-20 w-[1280px]">
                     <div className="max-md:my-[100px] my-[150px] flex max-lg:flex-col gap-20 justify-between text-[#1b3434] max-sm:text-sm max-md:text-base max-lg:text-lg text-xl text-justify leading-8 tracking-wide">
@@ -34,7 +31,6 @@ function AboutPage() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

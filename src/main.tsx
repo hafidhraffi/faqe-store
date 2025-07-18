@@ -19,9 +19,12 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
       { path: "products", element: <ProductsPage /> },
-      { path: "*", element: <UnderDevPage /> },
     ],
   },
+  {
+    path: "/*",
+    element: <UnderDevPage />,
+  }
 ]);
 
 const queryClient = new QueryClient();
