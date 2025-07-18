@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProductsPage from './pages/ProductsPage';
 import UnderDevPage from './pages/UnderDevPage';
+import NotFound from './notFound';
 
 const router = createBrowserRouter([
   {
@@ -22,9 +23,21 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/*",
+    path: "/terms-and-conditions",
     element: <UnderDevPage />,
-  }
+  },
+  {
+    path: "/privacy-and-security",
+    element: <UnderDevPage />,
+  },
+  {
+    path: "/other-informations",
+    element: <UnderDevPage />,
+  },
+  {
+    path: "/*",
+    element: <NotFound />,
+  },
 ]);
 
 const queryClient = new QueryClient();
